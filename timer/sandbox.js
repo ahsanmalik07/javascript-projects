@@ -1,6 +1,6 @@
 let currentState = "RESET";
 let sessionType = "SESSION";
-let startTime, endTime;
+let startTime, stopTime;
 var countdown;
 
 
@@ -123,6 +123,9 @@ const startTimer=() =>{
 
  
 }
+function updateStartTime(){
+    startTime = new Date();
+}
 
 function pauseTimer() {
     currentState = "PAUSE";
@@ -135,15 +138,22 @@ function resumeTimer() {
 
 function resetTimer() {
     currentState = "RESET";
+    stopTime = new Date();
+    var totalTime = dateFns.distanceInWords(startTime, stopTime, {addSuffix: true})
+    console.log(totalTime)
     enableFunctions();
     clearTimeout(countdown);
     document.querySelector('#minutes').innerHTML = "00";
     document.querySelector('#seconds').innerHTML = "00";
-    console.log(document.getElementById("workInput").value)
-   document.getElementById("summary").innerHTML += "<span>" + document.getElementById("workInput").value + "<br></span>"
+    var taskName = document.getElementById("workInput").value
+
+    
+    const html = `<li">${taskName} was completed ${totalTime}</li>`;
+
+   document.getElementById("summary-list").innerHTML += html
 }
 
-start.addEventListener("click",startTimer,false);
+start.addEventListener("click",() =>{startTimer(); updateStartTime},false);
 pause.addEventListener("click", pauseTimer, false);
 resume.addEventListener("click", resumeTimer, false);
 reset.addEventListener("click", resetTimer,false)
