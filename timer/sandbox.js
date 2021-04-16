@@ -55,7 +55,6 @@ const disableFunctions = () => {
     document.getElementById("breakInput").disabled = true;
 
     document.getElementById("start").style.display = "none";
-    document.getElementById("resume").style.display = "block";
     document.getElementById("pause").style.display = "block";
 
     document.getElementById("incrSession").disabled = true;
@@ -70,7 +69,7 @@ const enableFunctions = () => {
 
     document.getElementById("start").style.display = "block";
     document.getElementById("resume").style.display = "none";
-    document.getElementById("pause").style.display = "none";
+    
 
     document.getElementById("incrSession").disabled = false;
     document.getElementById("decrSession").disabled = false;
@@ -129,10 +128,14 @@ function updateStartTime(){
 
 function pauseTimer() {
     currentState = "PAUSE";
+    document.getElementById("pause").style.display = "none";
+    document.getElementById("resume").style.display = "block";
+
     clearTimeout(countdown);
 }
 
 function resumeTimer() {
+    document.getElementById("resume").style.display = "none";
     startTimer();
 }
 
@@ -140,7 +143,7 @@ function resetTimer() {
     currentState = "RESET";
     stopTime = new Date();
     var totalTime = dateFns.distanceInWords(startTime, stopTime, {addSuffix: true})
-    console.log(totalTime)
+    console.log(stopTime)
     enableFunctions();
     clearTimeout(countdown);
     document.querySelector('#minutes').innerHTML = "00";
@@ -148,7 +151,7 @@ function resetTimer() {
     var taskName = document.getElementById("workInput").value
 
     
-    const html = `<li">${taskName} was completed ${totalTime}</li>`;
+    const html = `<li class="list-group-item d-flex justify-content-between align-items-center">${taskName} was completed ${totalTime}</li>`;
 
    document.getElementById("summary-list").innerHTML += html
 }
