@@ -1,0 +1,161 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+html, body {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	background-color: #343F4F;
+	overflow: hidden;
+}
+
+
+
+.card {
+    justify-content: center;
+    display: flex;
+    margin: 0px 0px 0px 50px;
+    top: 100px;
+    width: 600px;
+    height: 850px;
+    content: '';
+    box-shadow: 0 0 100px 0 black;
+    z-index: 10;
+    flex-direction: column;
+}
+
+.card2 {
+    
+    align-items: center;
+    display: flex;
+    margin: 0px 0px 0px 50px;
+    top: 100px;
+    width: 600px;
+    height: 850px;
+    content: '';
+    box-shadow: 0 0 100px 0 black;
+    z-index: 10;
+    flex-direction: column;
+    background-color: rgb(61, 61, 61);
+    color: whitesmoke;
+}
+
+.timer-group {
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    width: 400px;
+    border-radius: 50%;
+    background-color: rgb(22, 22, 22, 0.1);
+    margin: 50px auto;
+    box-shadow: 0 0 300px 0 #108ef5;
+    z-index: 200;
+}
+  
+
+  #clock {
+    margin: 80px auto;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    
+  }
+
+  #clock span{
+    font-size: 90px;
+    font-weight: 400;
+    width: 260px;
+    color: whitesmoke;
+ 
+  
+  }
+
+  #minutes::after {
+    content: ":";
+  }
+
+  #options {
+    color: #108ef5;
+    display: flex;
+    font-size: 28px;
+    font-weight: normal;
+    justify-content: center;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+
+
+.fa-angle-double-up {
+    color: #108ef5;
+    cursor:pointer
+  }
+  .fa-angle-double-down {
+    color: #108ef5;
+    cursor: pointer;
+  }
+  #session, #break {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+input[type=number]{
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: calc(3px + .28vw) solid  #108ef5;
+    border-radius: 10px;
+    color:  #108ef5;
+    font: bold calc(21px + 1.43vw) "Open Sans", sans-serif;
+    margin: calc(5px + .43vw) calc(3px + .43vw);
+    padding: calc(3px + .43vw) calc(5px + .43vw);
+    text-align: center;
+}
+input::-webkit-inner-spin-button, 
+input::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+}
+#sessionType{
+    align-items: center;
+    display: flex;
+    color:#108ef5;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 15px;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#controls {
+    align-items: center;
+    display: flex;
+    color:#108ef5;
+    flex-direction: column;
+    
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 15px;
+    margin-top: 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.fas, .svg-inline--fa {
+    margin: 3px 3px;
+    position: relative;
+    cursor:pointer;
+  }
+
+#work-type{
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+

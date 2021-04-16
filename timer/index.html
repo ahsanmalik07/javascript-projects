@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" >
+    <script src="https://kit.fontawesome.com/594ddde515.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+    
+    <div class="card">
+        <div class="timer-group">
+            <div id="sessionType">SESSION</div>
+            <div id="clock">
+                <div id="countdown">
+                    <span id="minutes">00</span>
+                    <span id="seconds">00</span>
+                </div>
+                <div id="#timer"></div>
+            </div>
+            <div id="controls" class="reset">
+                <div id="start"><i class="fas fa-play"></i> Start</div>
+                <div id="resume" style="display: none;"><i class="fas fa-play-circle"></i> Resume</div>
+                <div id="pause" style="display: none;"><i class="fas fa-pause" ></i> Pause</div>
+                <div id="reset"><i class="fas fa-sync-alt"></i> Reset</div>
+            </div>
+        </div>
+        <div id="work-type">
+            <input id="workInput" type="text" >
+        </div>
+        <div id="options">
+            <div id="session">
+              <i id="incrSession" class="fas fa-angle-double-up" onclick="increment('sessionInput')"></i>
+              <span class="option-title">Session</span>
+              <input id="sessionInput" type="number" value="30" max="60" min="1">
+              <i id="decrSession" class="fas fa-angle-double-down" onclick="decrement('sessionInput')"></i>
+            </div>
+            <div id="break">
+              <i id="incrBreak" class="fas fa-angle-double-up" onclick="increment('breakInput')"></i>
+              <span class="option-title">Break</span>
+              <input id="breakInput" type="number" value="5" max="10" min="1">
+              <i id="decrBreak" class="fas fa-angle-double-down" onclick="decrement('breakInput')"></i>
+            </div>
+          </div>
+    </div>
+
+    <div class= "card2">
+        <h2>Things Done</h2>
+    </div>
+    <script type="text/javascript" src="./sandbox.js"></script>
+</body>
+</html>
