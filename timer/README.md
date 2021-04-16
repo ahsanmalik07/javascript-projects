@@ -1,8 +1,15 @@
 # A simple timer
  A simple timer using HTML, CSS &amp; Javascript. The timer can be start countdown based on user defined value.
- 
+
+## Steps to execute this calculator:
+- Download the entire code 
+- Open up the index.html.
+
 # Link to app
 https://competent-kepler-45cc26.netlify.app/
+
+![image](https://user-images.githubusercontent.com/82457788/115068865-41f60c00-9f0c-11eb-919c-0e2c7d2db8a5.png)
+
 
 # Features
 Has two seperate timers that can be adjusted accordingly. 
