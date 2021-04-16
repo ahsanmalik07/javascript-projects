@@ -5,23 +5,25 @@ var countdown;
 
 
 function increment(target){
-
-    var value = parseInt(document.getElementById(target).value);
-    value+=1;
-    document.getElementById(target).value = value;
-    if (currentState != "START"){
-    document.querySelector('#minutes').innerHTML = String(value);}
+    if (currentState == "RESET"){
+        var value = parseInt(document.getElementById(target).value);
+        value+=1;
+        document.getElementById(target).value = value;
+    
+        document.querySelector('#minutes').innerHTML = String(value);
+    }
 }
 
 function decrement(target){
-
-    var value = parseInt(document.getElementById(target).value);
-    if (value > document.getElementById(target).min){ value-=1; }
+    if (currentState == "RESET"){
+        var value = parseInt(document.getElementById(target).value);
+        if (value > document.getElementById(target).min){ value-=1; }
     
-    document.getElementById(target).value = value;
+        document.getElementById(target).value = value;
 
-    if (currentState != "START"){
-    document.querySelector('#minutes').innerHTML = String(value);}
+    
+        document.querySelector('#minutes').innerHTML = String(value);
+    }
     
 }
 
@@ -78,10 +80,13 @@ const enableFunctions = () => {
 
 
 const startTimer=() =>{
-    currentState = "START";
+   
     let minVal,secVal;
     document.getElementById("sessionType").innerHTML = sessionType
-    if (sessionType == "SESSION"){
+    if (currentState == "PAUSE"){
+        minVal = parseInt(document.querySelector('#minutes').innerHTML);
+        secVal = parseInt(document.querySelector('#seconds').innerHTML);;
+    } else if (sessionType == "SESSION"){
         minVal = parseInt(document.querySelector('#sessionInput').value);
         secVal = 0;
     }else if(sessionType == "BREAK"){
@@ -89,7 +94,8 @@ const startTimer=() =>{
         secVal = 0;
     }
     console.log(minVal, secVal)
-    
+    currentState = "START";
+
     disableFunctions();
     let currentTimeLeft = (60*minVal) + secVal; 
 
