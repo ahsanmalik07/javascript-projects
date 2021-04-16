@@ -141,6 +141,7 @@ function resumeTimer() {
 
 function resetTimer() {
     currentState = "RESET";
+    sessionType = "SESSION"
     stopTime = new Date();
     var totalTime = dateFns.distanceInWords(startTime, stopTime, {addSuffix: true})
     console.log(stopTime)
