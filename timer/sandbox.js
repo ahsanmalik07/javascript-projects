@@ -133,6 +133,8 @@ function resetTimer() {
     clearTimeout(countdown);
     document.querySelector('#minutes').innerHTML = "00";
     document.querySelector('#seconds').innerHTML = "00";
+    console.log(document.getElementById("workInput").value)
+   document.getElementById("summary").innerHTML += "<span>" + document.getElementById("workInput").value + "<br></span>"
 }
 
 start.addEventListener("click",startTimer,false);

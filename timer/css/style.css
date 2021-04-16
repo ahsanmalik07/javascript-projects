@@ -26,7 +26,6 @@ html, body {
 }
 
 .card2 {
-    
     align-items: center;
     display: flex;
     margin: 0px 0px 0px 50px;
@@ -39,6 +38,11 @@ html, body {
     flex-direction: column;
     background-color: rgb(61, 61, 61);
     color: whitesmoke;
+}
+
+.card2 #summary{
+
+float: left;
 }
 
 .timer-group {
