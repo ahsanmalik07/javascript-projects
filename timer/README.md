@@ -23,7 +23,7 @@ Same way we can implemet pause and reset functions for the timer by clearing out
 
 ![image](https://user-images.githubusercontent.com/82457788/115067447-5e914480-9f0a-11eb-952d-5d3541309ab3.png)
 
-# STATE Machichine
+# STATE Machine
 state machine concept is used to implement the timer. The idea is that each time a user presses the button, the state of the timer changes and based on the current state the timer works accordingly.
 
 # DOM Manipulation 
