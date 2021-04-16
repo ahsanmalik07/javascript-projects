@@ -151,10 +151,20 @@ input::-webkit-outer-spin-button {
   }
 
 #work-type{
+    margin-bottom: 10px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
+#work-type input{
+  size: 10;
+  font-size: 20px;
+  color: whitesmoke;
+  background: transparent;
+  margin-bottom: 10px;
+}
 
 
 

@@ -1,5 +1,6 @@
 let currentState = "RESET";
 let sessionType = "SESSION";
+let startTime, endTime;
 var countdown;
 
 
