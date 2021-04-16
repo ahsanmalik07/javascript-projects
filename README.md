@@ -4,4 +4,7 @@
  
 # A simple Calculator
  A simple calculator using HTML, CSS &amp; Javascript
+ 
+# A simple timer
+ A simple timer using HTML, CSS &amp; Javascript
 
