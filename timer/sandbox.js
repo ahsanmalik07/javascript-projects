@@ -82,17 +82,20 @@ const startTimer=() =>{
    
     let minVal,secVal;
     document.getElementById("sessionType").innerHTML = sessionType
-    if (currentState == "PAUSE"){
-        minVal = parseInt(document.querySelector('#minutes').innerHTML);
-        secVal = parseInt(document.querySelector('#seconds').innerHTML);;
-    } else if (sessionType == "SESSION"){
+
+    if (currentState == "RESET" && sessionType == "SESSION"){
         minVal = parseInt(document.querySelector('#sessionInput').value);
         secVal = 0;
-    }else if(sessionType == "BREAK"){
+    }else if(currentState == "RESET" && sessionType == "BREAK"){
         minVal =  parseInt(document.querySelector('#breakInput').value);
         secVal = 0;
     }
-    console.log(minVal, secVal)
+   
+    if (currentState == "PAUSE"){
+        minVal = parseInt(document.querySelector('#minutes').innerHTML);
+        secVal = parseInt(document.querySelector('#seconds').innerHTML);;
+    } 
+
     currentState = "START";
 
     disableFunctions();
@@ -100,21 +103,26 @@ const startTimer=() =>{
 
     countdown = setInterval(() => {
         if (currentTimeLeft == 0) {
+
             clearInterval()
+
         } else {
          currentTimeLeft--;
-        
+         if (currentTimeLeft <= 10){
+            document.getElementById("minutes").style.color = "red";
+            document.getElementById("seconds").style.color = "red";
+         }
         }
         
         displayTimeLeft(currentTimeLeft);
 
         if (sessionType == "SESSION" && currentTimeLeft == 0){
             sessionType = "BREAK";
-            resetTimer();
+            resetValues();
             startTimer();
         }else if (sessionType == "BREAK" && currentTimeLeft == 0){
             sessionType = "SESSION";
-            resetTimer();
+            resetValues();
             startTimer();
         }
 
@@ -129,6 +137,7 @@ function updateStartTime(){
 
 function pauseTimer() {
     currentState = "PAUSE";
+
     document.getElementById("pause").style.display = "none";
     document.getElementById("resume").style.display = "block";
 
@@ -140,23 +149,29 @@ function resumeTimer() {
     startTimer();
 }
 
+function resetValues(){
+    currentState = "RESET";
+    clearTimeout(countdown);
+    document.querySelector('#minutes').innerHTML = "00";
+    document.querySelector('#seconds').innerHTML = "00";
+    document.getElementById("minutes").style.color = "white";
+    document.getElementById("seconds").style.color = "white";
+}
 function resetTimer() {
     currentState = "RESET";
-    sessionType = "SESSION"
+    sessionType = "SESSION";
+
     stopTime = new Date();
-    console.log(startTime, stopTime)
     var totalTime = dateFns.distanceInWords(startTime, stopTime, {addSuffix: true})
-    console.log(totalTime)
+    
     enableFunctions();
     clearTimeout(countdown);
     document.querySelector('#minutes').innerHTML = "00";
     document.querySelector('#seconds').innerHTML = "00";
-    var taskName = document.getElementById("workInput").value
 
-    
+    var taskName = document.getElementById("workInput").value;
     const html = `<li class="list-group-item d-flex justify-content-between align-items-center">${taskName} was completed ${totalTime}</li>`;
-
-   document.getElementById("summary-list").innerHTML += html
+   document.getElementById("summary-list").innerHTML += html;
 }
 
 start.addEventListener("click",() =>{startTimer(); updateStartTime();},false);
