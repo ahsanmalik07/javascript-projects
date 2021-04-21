@@ -12,7 +12,7 @@ html, body {
 
 
 
-.card {
+.card1 {
     justify-content: center;
     display: flex;
     margin: 0px 0px 0px 50px;
@@ -166,7 +166,6 @@ input::-webkit-outer-spin-button {
   background: transparent;
   margin-bottom: 10px;
 }
-
 
 
 

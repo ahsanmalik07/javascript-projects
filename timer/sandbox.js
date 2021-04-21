@@ -1,6 +1,6 @@
 let currentState = "RESET";
 let sessionType = "SESSION";
-let startTime, stopTime;
+var startTime, stopTime;
 var countdown;
 
 
@@ -69,7 +69,7 @@ const enableFunctions = () => {
 
     document.getElementById("start").style.display = "block";
     document.getElementById("resume").style.display = "none";
-    
+    document.getElementById("pause").style.display = "none";
 
     document.getElementById("incrSession").disabled = false;
     document.getElementById("decrSession").disabled = false;
@@ -123,7 +123,8 @@ const startTimer=() =>{
  
 }
 function updateStartTime(){
-    startTime = new Date();
+   startTime = new Date();
+   
 }
 
 function pauseTimer() {
@@ -143,8 +144,9 @@ function resetTimer() {
     currentState = "RESET";
     sessionType = "SESSION"
     stopTime = new Date();
+    console.log(startTime, stopTime)
     var totalTime = dateFns.distanceInWords(startTime, stopTime, {addSuffix: true})
-    console.log(stopTime)
+    console.log(totalTime)
     enableFunctions();
     clearTimeout(countdown);
     document.querySelector('#minutes').innerHTML = "00";
@@ -157,7 +159,7 @@ function resetTimer() {
    document.getElementById("summary-list").innerHTML += html
 }
 
-start.addEventListener("click",() =>{startTimer(); updateStartTime},false);
+start.addEventListener("click",() =>{startTimer(); updateStartTime();},false);
 pause.addEventListener("click", pauseTimer, false);
 resume.addEventListener("click", resumeTimer, false);
 reset.addEventListener("click", resetTimer,false)
