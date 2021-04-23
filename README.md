@@ -8,3 +8,5 @@
 # A simple timer
  A simple timer using HTML, CSS &amp; Javascript
 
+# A Weather App
+A simple app to return the weather of the searched location
