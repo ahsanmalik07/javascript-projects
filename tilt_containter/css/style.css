@@ -1,0 +1,47 @@
+body {
+    padding: 20px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.tilt-container {
+    width: 32rem;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(60deg, #06c88e, #131413);
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    box-shadow: 0 15 40px rgba(0, 0, 0.20), 0 15 12px rgba(0, 0, 0.15);
+    transition: all 180ms ease-out;
+    position: relative;
+}
+
+.tilt-container h1 {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 600;
+    font-family: sans-serif;
+    text-shadow: 0 0 22px rgba(0, 0, 0, 0.6);
+    transform: translateZ(40px);
+}
+
+.tilt-container h1:hover {}
+
+.circle {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+}
+
+.circle span {
+    display: inline-flex;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0 0.1rem;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow: 15 40px rgba(0, 0, 0.20);
+    transform: translateZ(40px);
+}
