@@ -44,11 +44,10 @@ body {
     position: relative;
     width: 370px;
     border-radius: 50%;
-    background-color: rgba(107, 98, 98, 0.1);
+    background-color: rgba(66, 63, 63, 0.8);
     margin: 50px auto;
-    box-shadow: 0 0 100px 0 whitesmoke;
+    box-shadow: 0 0 70px 0 rgb(126, 123, 123);
     z-index: 200;
-    background: radial-gradient(circle at 100px 100px, #524d4d, rgb(100, 97, 97));
 }
 
 #clock {
@@ -70,22 +69,23 @@ body {
 }
 
 #options {
-    color: #108ef5;
+    color: #0b0c0c;
     display: flex;
-    font-size: 28px;
+    font-size: 29px;
     font-weight: normal;
     justify-content: center;
-    margin-bottom: 28px;
+    margin-bottom: 26px;
     text-align: center;
+    font-weight: 200;
 }
 
 .fa-angle-double-up {
-    color: #108ef5;
+    color: #1b1b1b;
     cursor: pointer
 }
 
 .fa-angle-double-down {
-    color: #108ef5;
+    color: #0f0f0f;
     cursor: pointer;
 }
 
@@ -100,9 +100,9 @@ input[type=number] {
     background: transparent;
     border: none;
     outline: none;
-    border-bottom: calc(3px + .28vw) solid #108ef5;
+    border-bottom: calc(3px + .28vw) solid #0f0f0f;
     border-radius: 10px;
-    color: #108ef5;
+    color: #000000;
     font: bold calc(21px + 1.43vw) "Open Sans", sans-serif;
     margin: calc(5px + .43vw) calc(3px + .43vw);
     padding: calc(3px + .43vw) calc(5px + .43vw);
@@ -131,11 +131,11 @@ input::-webkit-outer-spin-button {
 #controls {
     align-items: center;
     display: flex;
-    color: #108ef5;
+    color: #ffffff;
     flex-direction: column;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 600;
-    line-height: 25px;
+    line-height: 22px;
     margin-top: 0px;
     text-align: center;
     text-transform: uppercase;
