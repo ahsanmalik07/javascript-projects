@@ -1,26 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
-
-html, body {
-	display: flex;
-	width: 100%;
-	height: 100%;
-	justify-content: center;
-	align-items: center;
-	background-color: #343F4F;
-	overflow: hidden;
+html,
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    overflow: hidden;
 }
-
-
 
 .card1 {
     justify-content: center;
     display: flex;
     margin: 0px 0px 0px 50px;
     top: 100px;
-    width: 600px;
-    height: 850px;
+    width: 580px;
+    height: 750px;
     content: '';
-    box-shadow: 0 0 100px 0 black;
+    box-shadow: 0 0 60px 0 black;
     z-index: 10;
     flex-direction: column;
 }
@@ -30,54 +28,48 @@ html, body {
     display: flex;
     margin: 0px 0px 0px 50px;
     top: 100px;
-    width: 600px;
-    height: 850px;
+    width: 500px;
+    height: 650px;
     content: '';
-    box-shadow: 0 0 100px 0 black;
+    box-shadow: 0 0 40px 0 black;
     z-index: 10;
     flex-direction: column;
-    background-color: rgb(61, 61, 61);
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: rgb(0, 0, 0);
 }
-
-
 
 .timer-group {
     height: 400px;
     margin: 0 auto;
     position: relative;
-    width: 400px;
+    width: 370px;
     border-radius: 50%;
-    background-color: rgb(22, 22, 22, 0.1);
+    background-color: rgba(107, 98, 98, 0.1);
     margin: 50px auto;
-    box-shadow: 0 0 300px 0 #108ef5;
+    box-shadow: 0 0 100px 0 whitesmoke;
     z-index: 200;
-    background: radial-gradient(circle at 100px 100px, #114f92, #000);
+    background: radial-gradient(circle at 100px 100px, #524d4d, rgb(100, 97, 97));
 }
-  
 
-  #clock {
-    margin: 80px auto;
+#clock {
+    margin: 55px auto;
     align-content: center;
     text-align: center;
     justify-content: center;
-    
-  }
+}
 
-  #clock span{
+#clock span {
     font-size: 90px;
     font-weight: 400;
     width: 260px;
     color: whitesmoke;
- 
-  
-  }
+}
 
-  #minutes::after {
+#minutes::after {
     content: ":";
-  }
+}
 
-  #options {
+#options {
     color: #108ef5;
     display: flex;
     font-size: 28px;
@@ -87,42 +79,45 @@ html, body {
     text-align: center;
 }
 
-
-
 .fa-angle-double-up {
     color: #108ef5;
-    cursor:pointer
-  }
-  .fa-angle-double-down {
+    cursor: pointer
+}
+
+.fa-angle-double-down {
     color: #108ef5;
     cursor: pointer;
-  }
-  #session, #break {
+}
+
+#session,
+#break {
     align-items: center;
     display: flex;
     flex-direction: column;
-  }
+}
 
-input[type=number]{
+input[type=number] {
     background: transparent;
     border: none;
     outline: none;
-    border-bottom: calc(3px + .28vw) solid  #108ef5;
+    border-bottom: calc(3px + .28vw) solid #108ef5;
     border-radius: 10px;
-    color:  #108ef5;
+    color: #108ef5;
     font: bold calc(21px + 1.43vw) "Open Sans", sans-serif;
     margin: calc(5px + .43vw) calc(3px + .43vw);
     padding: calc(3px + .43vw) calc(5px + .43vw);
     text-align: center;
 }
-input::-webkit-inner-spin-button, 
-input::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
 }
-#sessionType{
+
+#sessionType {
     align-items: center;
     display: flex;
-    color:#fafafa;
+    color: whitesmoke;
     flex-direction: column;
     font-size: 30px;
     font-weight: 600;
@@ -136,40 +131,38 @@ input::-webkit-outer-spin-button {
 #controls {
     align-items: center;
     display: flex;
-    color:#108ef5;
+    color: #108ef5;
     flex-direction: column;
-    
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 600;
-    line-height: 15px;
+    line-height: 25px;
     margin-top: 0px;
     text-align: center;
     text-transform: uppercase;
 }
 
-.fas, .svg-inline--fa {
+.fas,
+.svg-inline--fa {
     margin: 3px 3px;
     position: relative;
-    cursor:pointer;
-  }
+    cursor: pointer;
+}
 
-#work-type{
+#work-type {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
-#work-type input{
-  size: 10;
-  font-size: 20px;
-  color: whitesmoke;
-  background: transparent;
-  margin-bottom: 10px;
+#work-type input {
+    size: 10;
+    font-size: 20px;
+    color: rgb(15, 15, 15);
+    background: transparent;
+    margin-bottom: 10px;
 }
 
-
-.text-color{
-  color: red;
+.text-color {
+    color: red;
 }
